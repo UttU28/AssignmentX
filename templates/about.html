@@ -1,0 +1,99 @@
+<!doctype html>
+
+<head>
+    <title>AssignmentX</title>
+    <link rel="stylesheet" href="static/about.css">
+    <script src="canvas-nest.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"
+        integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <center id="fullcode">
+
+        <!-- <header class="header">
+            <a href="/" class="logo">AssignmentX</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="/" class="scroll">HOME</a></li>
+                <li><a href="{{ url_for('about') }}" class="scroll">ABOUT</a></li>
+                <li><a href="{{ url_for('contact') }}" class="scroll">CONTACT</a></li>
+            </ul>
+        </header>
+        <div id="home"><br><br></div> -->
+
+        <center>
+            <div class="about gradient-border" id="box">
+                <!-- <p class="abouth1">About Us</p>
+                <hr>
+                <p class="aboutp">We are just a bunch of Developers, 3 to be precise...<br>We developed this
+                    application
+                    to
+                    reduce the stress
+                    of writing assigments of the students all over the globe.<br>Even we are tired of writing lengthy
+                    meaningless assignments. So we bring you AssignmentX.<br>This applicationwas developed using Python,
+                    Flask,
+                    Html, CSS and JS and took us 6 days to finish this project from scratch.<br></p>
+                <br><br>
+                <p class="abouth2">How to use?</p> -->
+                <p class="aboutp">1) Enter Your Beautiful Name.</p><br>
+                <p class="aboutp">2) Select your Primary and Secondary Colors. You can activate your secondary color
+                    by
+                    writing text between "$" sign. i.e. $Text Here$, so the text between dollar sign will be written in
+                    secondary color.</p><br>
+                <p class="aboutp">3) If you have your Text file then select yes and if you do not have your text file
+                    then select no and a textbox will appear where you have to add whatever you want in your assignment
+                    page</p><br>
+                <p class="aboutp">4) Set the opacity if your text. It is optional. It is set on normal, but if you
+                    want your text to be more dark or light feel free to experiment with the slider</p>
+                <p class="aboutp">5) Select form the variety of pages available.. Your output will be printed on the
+                    one you sleect.</p><br>
+                <p class="aboutp">6) If you have your custom fonts then select yes and if not then dont worry we got
+                    you covered. Just select no and we will do the work for you.</p><br>
+                <p class="aboutp">7) Depending upon your selection above, store all the files in one place and select
+                    them all simultaneously. If you want to select your Text file and Font file then just click on
+                    select fils and select them and import them together. If you press select files again then your
+                    previous selection will be cleared.</p><br>
+                <p class="aboutp">8) Now all you need to do is Click on Upload and wait for our program to build your
+                    assignment.</p>
+                <br>
+                <a href="{{ url_for('index') }}"
+                        style="text-decoration: underline;" class="aboutp">BACK</a>
+                <br>
+                <!-- <p class="aboutp">If you loved the application and want to give a feedback or have any query feel free
+                    to write us or call us using the information on <a href="{{ url_for('contact') }}"
+                        style="text-decoration: underline;" class="aboutp">CONTACT</a> page.
+                </p> -->
+                <br>
+            </div>
+        </center>
+
+    </center>
+
+    <center id="footer">
+        <footer style="color: #f4f4f4">
+            Copyright<br>
+            A gandu ye hamara hai. Duniya se kaho DONT COPY THIS.
+        </footer>
+    </center>
+
+    <center id="intro" style="height: 100%; width: 100%; background: #000;">
+        <div class="text-container fadeout">
+            <h1>AssignmentX</h1>
+        </div>
+    </center>
+
+    <script>
+        setTimeout(function () {
+            document.getElementById("fullcode").style.display = "block";
+            document.getElementById("footer").style.display = "block";
+            document.getElementById("intro").style.display = "none";
+        }, 10);
+    </script>
+
+</body>
+
+</html>

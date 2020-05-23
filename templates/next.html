@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="static/next.css">
+</head>
+<!-- <h2>Download a file</h2> -->
+
+<body">
+
+    <div class="loader-wrapper" id="loader-wrapper">
+        <div class='body'>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <div class='base'>
+                <span></span>
+                <div class='face'></div>
+            </div>
+        </div>
+        <div class='longfazers'>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h1>Loading Your Assignment... It can take upto 24 Hours....<br>&nbsp;&nbsp;&nbsp;&nbsp; Just Kidding, all it
+            takes is 3 seconds!</h1>
+    </div>
+
+    <script>
+        setTimeout(function () {
+            document.getElementById("fullcode").style.display = "block";
+            document.getElementById("loader-wrapper").style.display = "none";
+        }, 3000);
+    </script>
+
+    <center id="fullcode">
+        <div class="form">
+            <center>
+                <div class="align">
+                    <h1 style="font-weight: 900;">Thank you so much {{name}} for using our Service.</h1>
+
+                    <a href="{{ url_for('.output') }}" target="blank" download class="long submit"
+                        style="color: #000000; font-weight: 900; font-size: 40px;">
+                        Download the Magical PDF!
+                    </a>
+                    <br>
+                    <a href="/" target="blank" class="long submit"
+                        style="color: #000000; font-weight: 900; font-size: 30px;">
+                        Create Another One...
+                    </a>
+                    <br>
+                    <p style="font-size: medium; color: #fa9c9c; font-weight: 900;">*In the rare case where you did not
+                        get the intended assignment, please try again. The server might be under load!</p>
+
+
+                </div>
+                <br>
+                <hr>
+                <p class="developer" style="font-weight: 900; font-family: Georgia, 'Times New Roman', Times, serif;"><a
+                        href="#" class="abouth2" style="color: #f0d22c;">Application Created by:<br>
+                        UTSAV CHAUDHARY<br> AMIT LUHAR <br> VINIT DEDHIA</a></p>
+                <hr>
+
+                <p class="developer">Like our WORK??<br>We did so much for you, show love to us...</p>
+                <div class="contact">
+                    <p class="developer"><a href="https://www.patreon.com/thatinsaneguy" class="abouth2">Support on
+                            Patreon<br>thatinsaneguy</a></p>
+                    <p class="developer"><a href="#" class="abouth2">Support on Paytm<br>+91 7506152480</a></p>
+                </div>
+                <hr>
+
+                <p class="developer"> To know more about this app, Click on Menu and go to About.</p>
+
+                <p class="developer">To add custom pages, Click on the Menu and go to Contact.</a></p>
+
+
+            </center>
+        </div>
+    </center>
+
+
+    </body>
+
+    </html>

@@ -1,0 +1,684 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: myfont;
+    color: rgba(0, 0, 0, 1);
+}
+
+body {
+    /* background: url(background.jpg) no-repeat; */
+    background: #000;
+    background-size: cover;
+    /* filter: blur(1px); */
+
+}
+
+
+@font-face {
+    font-family: myfont;
+    src: url(AdventPro-Medium.ttf)
+}
+
+
+
+@font-face {
+    font-family: "title";
+    src: url(inversionzunboxed.ttf)
+}
+
+@font-face {
+    font-family: "developers";
+    src: url(Zolanti.ttf);
+}
+
+
+
+
+
+/* header */
+
+.header {
+    background-color: #e4e9ff;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    margin: 0;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #e4e9ff;
+}
+
+.header li a {
+    display: block;
+    padding: 20px 20px;
+    font-size: 20px;
+    border-right: 1px solid #000000;
+    color: #000;
+    text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: #000000;
+    color: #e4e9ff;
+}
+
+.header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 60px 60px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 10px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 50px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked~.menu {
+    max-height: 400px;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 1000px) {
+
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 20px 30px;
+        font-size: 3vh;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+}
+
+
+
+
+
+#fullcode {
+    display: none;
+}
+
+#footer {
+    display: none;
+}
+
+
+.form {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 1);
+    filter: blur();
+    /* background: #000000; */
+    /* border: 2px solid #e4e9ff; */
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form h1 {
+    color: #e4e9ff;
+    font-size: 60px;
+    font-family: 'title';
+}
+
+.form .long {
+    margin: 10px 0;
+    word-spacing: 4px;
+    font-size: 30px;
+    font-weight: 900;
+    color: #e4e9ff;
+}
+
+.form .text {
+    margin: 10px 0;
+    word-spacing: 4px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #e4e9ff;
+}
+
+.submit {
+    outline: none;
+    background: none;
+    border: none;
+    padding: 2px 2px;
+    font-size: 20px;
+    border-bottom: 2px solid #e4e9ff;
+    color: #e4e9ff;
+    /* text-align: center; */
+}
+
+.submit:hover {
+    background-color: #e4e9ff;
+    color: rgb(54, 54, 54);
+    /* border: 2px solid #040505; */
+}
+
+.align {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.name {
+    width: 100%;
+    height: 30px;
+    border: none;
+}
+
+.select {
+    margin-top: 20px;
+}
+
+.palate {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.palate1 {
+    width: 100%;
+}
+
+
+.drop {
+    margin-bottom: 50px;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+
+
+#box {
+    margin-top: 100px;
+    height: 100%;
+    width: 40%;
+    box-shadow: 5px 5px 10px 2px #e4e9ff;
+}
+
+.gradient-border {
+    --borderWidth: 3px;
+    background: #000;
+    position: relative;
+    border-radius: var(--borderWidth);
+}
+
+.gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(120deg, #e4e9ff, #fcefc6, #fef9eb);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+.fadeout {
+    text-align: center;
+    opacity: 0;
+    -webkit-animation: fadeout 4s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadeout 4s;
+    /* Firefox < 16 */
+    -ms-animation: fadeout 4s;
+    /* Internet Explorer */
+    -o-animation: fadeout 4s;
+    /* Opera < 12.1 */
+    animation: fadeout 4s;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+
+.text-container {
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    /* background-color: red; */
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* transform: translate(-50%, -50%); */
+
+}
+
+.text-container h1 {
+    font-family: arial;
+    font-size: 150px;
+    color: rgba(255, 255, 255, .2);
+    background-image: url('https://thumbs.dreamstime.com/z/creative-design-flowing-yellow-orange-paint-white-square-frame-127716400.jpg');
+    /*   background-position: center; */
+    background-size: 270px;
+    background-repeat: repeat-x;
+    -webkit-background-clip: text;
+    animation: animate 15s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: left 0px top 0px;
+    }
+
+    40% {
+        background-position: left 800px top 0px;
+    }
+}
+
+.text-container {
+    margin-top: 17%;
+    text-align: center;
+}
+
+/* 
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+
+}
+ */
+
+@media only screen and (max-width: 1000px) {
+    .text-container {
+        top: 0;
+        top: 30vh;
+    }
+}
+
+
+
+
+
+
+/* ############################Input Slider ############################################################# */
+
+
+input[type="range"] {
+    /* To remove default styles appplied by webkit browsers */
+    -webkit-appearance: none;
+    /* width: 40em; */
+    width: 100%;
+    background: transparent;
+    position: relative;
+}
+
+input[type="range"]:focus {
+    /* To remove default (mostly blue) outline appplied by browsers on :focus */
+    outline: 0;
+}
+
+/* SLIDER THUMB -> represented by the orange ball in the design */
+/* Webkit based browsers (chrome, opera, ...) */
+input[type="range"]::-webkit-slider-thumb {
+    /* Removes the default styling */
+    -webkit-appearance: none;
+
+    width: 3em;
+    height: 3em;
+    margin: .5em 0;
+    background: #e4e9ff;
+    border-radius: 100%;
+    border: 0.1em solid #e4e9ff;
+
+    /* The inset shadow gives dimension and makes the thumb look 3 dimensional and the other one shows a subtle effect of the shadow it creates because of the light source coming from the top left of the page */
+    box-shadow:
+        inset .8em .8em 5px -8px rgba(0, 0, 0, 0.4),
+        inset -.4em -.4em 10px -3px rgba(0, 0, 0, .2),
+        0.7em 0.5em 7px -0.5em rgba(0, 0, 0, .4);
+    ;
+
+    cursor: pointer;
+}
+
+/*All the same stuff for firefox */
+input[type=range]::-moz-range-thumb {
+    width: 3em;
+    height: 3em;
+    margin: .5em 0;
+    background: #e4e9ff;
+    border-radius: 100%;
+    border: 0.1em solid #e4e9ff;
+    box-shadow:
+        inset .8em .8em 5px -8px rgba(0, 0, 0, 0.4),
+        inset -.4em -.4em 10px -3px rgba(0, 0, 0, .2),
+        0.7em 0.5em 7px -0.5em rgba(0, 0, 0, .4);
+    cursor: pointer;
+    border: 0;
+}
+
+
+/* RUNNABLE TRACK -> represented by the indented carve in which the ball (thumb) moves */
+/* Webkit browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: transparent;
+    width: 100%;
+    height: 4em;
+    padding: 0 1em;
+    border-radius: 2em;
+    border: 0.1em solid #e4e9ff;
+
+    /* These shadow are what create the skeumorphic indent on the track. The first one is dark to show places in the indent that light don't reach and the second one shows places where light meets thereby creating the illusion of depth */
+    box-shadow:
+        inset .6em 1em 10px rgba(0, 0, 0, .15),
+        inset -.6em -1em 10px rgba(0, 0, 0, 0.415);
+}
+
+/* For firefox */
+input[type=range]::-moz-range-track {
+    background: transparent;
+    width: 100%;
+    height: 4em;
+    padding: 0 1em;
+    border-radius: 2em;
+    border: 0.1em solid #e4e9ff;
+    box-shadow:
+        inset .6em 1em 10px rgba(0, 0, 0, .15),
+        inset -.6em -1em 10px rgba(0, 0, 0, 0.415);
+}
+
+/* For the numbering in the range's design - doesn't show on firefox but shows on chrome and opera */
+input[type="range"]::before {
+    font-family: ariel;
+    content: "Transparent \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 Opaque";
+    position: absolute;
+    text-align: center;
+    color: #c4c4c4;
+    font-size: 1em;
+
+
+    /*Serves to spread the letters to fit the whole width of the track */
+    letter-spacing: .65em;
+
+    top: 1.5em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.6em;
+
+    /* Makes the letters look embossed adding to the skeumorphic theme of the design */
+    text-shadow: .5px .5px 0.9px rgba(0, 0, 0, .4);
+
+    z-index: -1;
+}
+
+.about {
+    /* color: #e4e9ff; */
+    margin-top: 100px;
+    height: 100%;
+    width: 40%;
+    box-shadow: 5px 5px 10px 2px #e4e9ff;
+}
+
+.abouth1 {
+    color: #e4e9ff;
+    font-size: 60px;
+}
+
+.abouth2 {
+    color: #e4e9ff;
+    font-size: 30px;
+}
+
+.aboutp {
+    color: #e4e9ff;
+    font-size: 25px;
+}
+
+.contactmain {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.contact1 p a :hover {
+    text-shadow: 0 0 10px #fff;
+    text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+
+    .header .logo {
+        font-size: 4vh;
+    }
+
+    .header li a {
+        font-size: 3vh;
+    }
+
+    .header .menu-btn {
+        font-size: 4vh;
+    }
+
+    #box {
+        margin-top: 100px;
+        width: 98%;
+        height: 100%;
+    }
+
+    /* For mobile phones: */
+    .form {
+        width: 100%;
+        height: 100%;
+    }
+
+    .form h1 {
+        font-size: 8vh;
+    }
+
+    .form .long {
+        font-size: 3vh;
+    }
+
+    .form .text {
+        font-size: 3vh;
+    }
+
+    .form .developer {
+        font-size: 3vh;
+    }
+
+    .submit {
+        font-size: 3vh;
+        margin: 0px 0;
+    }
+
+    .name {
+        height: 5vh;
+        font-size: 3vh;
+    }
+
+    .footer {
+        font-size: 3vh;
+    }
+
+
+    input[type="range"]::before {
+        font-family: ariel;
+        content: "Transparent \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 Opaque";
+        position: absolute;
+        text-align: center;
+        color: #c3c4c4;
+        font-size: 1.5em;
+
+
+        /*Serves to spread the letters to fit the whole width of the track */
+        letter-spacing: .65em;
+
+        top: 0.5em;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.6em;
+
+        /* Makes the letters look embossed adding to the skeumorphic theme of the design */
+        text-shadow: .5px .5px 0.9px rgba(0, 0, 0, .4);
+
+        z-index: -1;
+    }
+
+
+    .abouth1 {
+        color: #e4e9ff;
+        font-size: 3vh;
+    }
+
+    .abouth2 {
+        color: #e4e9ff;
+        font-size: 3vh;
+    }
+
+    .aboutp {
+        color: #e4e9ff;
+        font-size: 3vh;
+    }
+
+    .contactmain {
+        display: block;
+    }
+
+}

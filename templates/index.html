@@ -1,0 +1,214 @@
+<!doctype html>
+
+<head>
+    <title>AssignmentX</title>
+    <link rel="stylesheet" href="static/index.css">
+    <script src="canvas-nest.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"
+        integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <center id="fullcode">
+
+        <!-- <header class="header">
+            <a href="/" class="logo">AssignmentX</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="/" class="scroll">HOME</a></li>
+                <li><a href="{{ url_for('about') }}" class="scroll">ABOUT</a></li>
+                <li><a href="{{ url_for('contact') }}" class="scroll">CONTACT</a></li>
+            </ul>
+        </header>
+        <div id="home"><br><br></div> -->
+
+        <div class="gradient-border" id="box">
+            <form method="POST" enctype="multipart/form-data" class="form">
+                <!-- <h1>AssignmentX</h1> -->
+                <!-- <hr> -->
+                <br><p class="long">Let's start building your assignment, one step at a time! If you get Stuck, <a href="{{ url_for('about') }}"
+                        style="color: #e4e9ff; text-decoration: underline;">Tutorial Here!</a>
+                </p><br>
+                <hr>
+                <center>
+                    <div class="align">
+
+                        <p class="text">Enter Your Name</p>
+                        <input type="text" name="name" class="submit newwala" placeholder="Your Name HERE" required>
+                    </div>
+
+                        <br><hr>
+                    
+                     <div class="align">
+                        <p class="text">Select your INK Preference:</p>
+                        <div class="palate">
+                            <div class="palate1">
+                                <label for="favcolor" class="textX">Select your<br>Primary<br> Ink color:</label>
+                                <input type="color" id="favcolor" name="color1" value="#000000" class="name"
+                                    style="width: 100%; height: 5vh;">
+                            </div>
+
+                            <div class="palate1">
+                                <label for="favcolor" class="textX">Select your<br>Secondary<br> Ink color:</label>
+                                <input type="color" id="favcolor" name="color2" value="#16264C" class="name"
+                                    style="width: 100%; height: 5vh;">
+                            </div>
+                        </div>
+                    </div>
+                        <br><hr>
+                    
+                        <div class="align">
+
+                        <label for="textareas" class="text">Do you have a Text File?</label>
+                        <select id="textareas" style="text-align: center;" class="submit select drop" name="opag"
+                            required>
+                            <option value="yes" style="text-align: center;">Yes, I do.</option>
+                            <option value="no" selected>No, I'll write here.</option>
+                        </select>
+
+
+                        <div class="textbox" id="textbox">
+                            <textarea name="textarea" class="submit newwala" id="textarea" cols="30" rows="10"
+                                placeholder="Text here" style="width: 100%; border: 1px solid #e4e9ff;"></textarea>
+                        </div>
+                        </div>
+
+                        <br><hr>
+                    
+                        <div class="align">
+
+                        <p class="text">Set Opacity of Text</p>
+                        <input type="range" id="range" min="0" max="255" value="192" class="swipes-slider"
+                            name="opacity" style="height: 100px; width: 100%;">
+                            </div>
+
+                            <br><hr>
+                    
+                            <div class="align">
+
+                        <label for="pages" class="text">Choose a Page:</label>
+                        <select id="pages" style="text-align: center;" class="submit select drop" name="opage" required>
+                            <option value="ucoe" style="text-align: center;" selected>UCoE Assignment Page</option>
+                            <option value="normal">Normal Page</option>
+                        </select>
+                        <p style="font-size: mediuml; color:#e4e9ff; ">*For adding your custom pages, go to the contact section in menu.</p> <br>
+                        </div>
+                        
+
+                        <hr>
+                    
+                        <div class="align">
+                        <label for="fonts" class="text">Do you have your own Fonts?</label>
+                        <select id="fonts" style="text-align: center;" class="submit select drop" name="sfont" required>
+                            <option value="yes">Yes, I do have my own Fonts</option>
+                            <option value="no" selected>No, I'll use yours..</option>
+                        </select>
+
+                    </div>
+
+                    <hr><br>
+                
+                    <div class="align">
+                        <p class="text">FINAL STEP:</p>
+
+                        <label for="file" id="filestemp" class="submit" style="width: 100%;">Select Files</label>
+                        <input type="file" id="file" name="file" multiple value="Select Files"
+                            style="visibility: hidden;">
+
+                        <input type="submit" value="Make your Assignment!" class="submit" style="margin: 30px 0px;">
+
+                    </div>
+                </center>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+                {% block body %}{% endblock %}
+            </form>
+
+        </div>
+
+
+    </center>
+
+    <center id="footer">
+        <footer style="color: #f4f4f4">
+           <a href="{{ url_for('pptc') }}"
+            style="color: #e4e9ff; text-decoration: underline;">Privacy Policy</a>
+            <br>
+            Copyright® 2020-3020 : Duniya se kaho DONT COPY THIS. <br><br><br>
+        </footer>
+    </center>
+
+    <!-- <center id="intro" style="height: 100%; width: 100%; background: #000;">
+        <div class="text-container fadeout">
+            <h1>AssignmentX</h1>
+        </div>
+    </center> -->
+
+
+
+    <script>
+        $("#textareas").change(function () {
+            if ($(this).val() == "yes") {
+                $('#textbox').hide();
+            } else {
+                $('#textbox').show();
+            }
+        });
+        $("#textareas").trigger("change");
+    </script>
+
+    <script>
+        var x = 2;
+        var z = 2;
+        $("#textareas").change(function () {
+            if ($(this).val() == "no") {
+                x = 1;
+            } else {
+                x = 0;
+            }
+            if (x == "1" && z == "1") {
+                $('#filestemp').hide();
+            } else {
+                $('#filestemp').show();
+            }
+        });
+        $("#textareas").trigger("change");
+
+        $("#fonts").change(function () {
+            if ($(this).val() == "no") {
+                z = 1;
+            } else {
+                z = 0;
+            }
+
+            if (x == "1" && z == "1") {
+                $('#filestemp').hide();
+            } else {
+                $('#filestemp').show();
+            }
+        });
+        $("#fonts").trigger("change");
+    </script>
+
+    <script>
+        setTimeout(function () {
+            document.getElementById("fullcode").style.display = "block";
+            document.getElementById("footer").style.display = "block";
+            document.getElementById("intro").style.display = "none";
+        }, 10);
+    </script>
+
+
+</body>
+
+</html>
